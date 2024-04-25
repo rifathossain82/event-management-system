@@ -1,0 +1,36 @@
+*** 1 - Create:
+
+CREATE TABLE Speakers (
+    speaker_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT,
+    bio TEXT,
+    contact_information VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+*** 2 - Insert:
+
+INSERT INTO Speakers (user_id, bio, contact_information)
+VALUES (1, 'Experienced speaker in technology conferences.', 'speaker@example.com');
+
+
+*** 3 - Update:
+
+UPDATE Speakers
+SET bio = 'Renowned speaker in artificial intelligence.'
+WHERE speaker_id = 1;
+
+
+*** 4 - Delete:
+
+DELETE FROM Speakers
+WHERE speaker_id = 1;
+
+
+*** 5 - Select:
+
+5.1 --> SELECT * FROM Speakers;
+5.2 --> SELECT * FROM Speakers WHERE user_id IN (SELECT user_id FROM Organizers WHERE organizer_id = 1);
+
+

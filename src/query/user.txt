@@ -1,0 +1,35 @@
+*** 1 - Create:
+
+CREATE TABLE Users (
+    user_id INT IDENTITY(1,1) PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    email VARCHAR(100),
+    full_name VARCHAR(100),
+);
+
+
+*** 2 - Insert:
+
+INSERT INTO Users (username, password, email, full_name)
+VALUES ('user51', 'password51', 'user51@example.com', 'Jennifer Smith');
+
+
+*** 3 - Update:
+
+UPDATE Users
+SET email = 'updated_email@example.com'
+WHERE user_id = 1;
+
+
+*** 4 - Delete:
+
+DELETE FROM Users
+WHERE user_id = 1;
+
+
+*** 5 - Select:
+
+5.1 --> SELECT * FROM Users;
+5.2 --> SELECT * FROM Users WHERE user_id IN (SELECT user_id FROM Attendees);
+

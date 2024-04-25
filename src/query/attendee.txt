@@ -1,0 +1,34 @@
+*** 1 - Create:
+
+CREATE TABLE Attendees (
+    attendee_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_id INT,
+    user_id INT,
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+*** 2 - Insert:
+
+INSERT INTO Attendees (event_id, user_id)
+VALUES (1, 2);
+
+
+*** 3 - Update:
+
+UPDATE Attendees
+SET event_id = 2
+WHERE attendee_id = 1;
+
+
+*** 4 - Delete:
+
+DELETE FROM Attendees
+WHERE attendee_id = 1;
+
+
+*** 5 - Select:
+
+5.1 --> SELECT * FROM Attendees;
+5.2 --> SELECT * FROM Attendees WHERE event_id = 1;

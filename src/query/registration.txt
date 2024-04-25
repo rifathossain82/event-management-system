@@ -1,0 +1,40 @@
+*** 1 - Create:
+
+CREATE TABLE Registrations (
+    registration_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_id INT,
+    attendee_id INT,
+    registration_date DATE,
+    registration_status VARCHAR(50),
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (attendee_id) REFERENCES Attendees(attendee_id)
+);
+
+
+*** 2 - Insert:
+
+INSERT INTO Registrations (event_id, attendee_id, registration_date, registration_status)
+VALUES (1, 1, '2024-05-01', 'Confirmed');
+
+
+*** 3 - Update:
+
+UPDATE Registrations
+SET registration_status = 'Cancelled'
+WHERE registration_id = 1;
+
+
+*** 4 - Delete:
+
+DELETE FROM Registrations
+WHERE registration_id = 1;
+
+
+*** 5 - Select:
+
+5.1 --> SELECT * FROM Registrations;
+5.2 --> SELECT * FROM Registrations WHERE event_id = 1;
+
+
+
+

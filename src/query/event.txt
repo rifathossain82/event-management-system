@@ -1,0 +1,37 @@
+*** 1 - Create:
+
+CREATE TABLE Events (
+    event_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_name VARCHAR(255),
+    event_description TEXT,
+    start_date DATE,
+    end_date DATE,
+    location VARCHAR(255),
+    organizer_id INT
+);
+
+
+*** 2 - Insert:
+
+INSERT INTO Events (event_name, event_description, start_date, end_date, location, organizer_id)
+VALUES ('Tech Summit 2024', 'Annual technology conference showcasing latest trends.', '2024-09-15', '2024-09-17', 'Convention Center', 1);
+
+
+*** 3 - Update:
+
+UPDATE Events
+SET location = 'Exhibition Hall'
+WHERE event_id = 1;
+
+
+*** 4 - Delete:
+
+DELETE FROM Events
+WHERE event_id = 1;
+
+
+*** 5 - Select:
+
+5.1 --> SELECT * FROM Events;
+5.2 --> SELECT * FROM Events WHERE organizer_id = 1;
+
