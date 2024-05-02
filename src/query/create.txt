@@ -1,0 +1,67 @@
+CREATE TABLE Registrations (
+    registration_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_id INT,
+    attendee_id INT,
+    registration_date DATE,
+    registration_status VARCHAR(50),
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (attendee_id) REFERENCES Attendees(attendee_id)
+);
+
+
+CREATE TABLE Speakers (
+    speaker_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT,
+    bio TEXT,
+    contact_information VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+CREATE TABLE Sessions (
+    session_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_id INT,
+    session_name VARCHAR(255),
+    start_time TIME,
+    end_time TIME,
+    location VARCHAR(255),
+    speaker_id INT,
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (speaker_id) REFERENCES Users(user_id)
+);
+
+
+CREATE TABLE Organizers (
+    organizer_id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+CREATE TABLE Attendees (
+    attendee_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_id INT,
+    user_id INT,
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+
+CREATE TABLE Users (
+    user_id INT IDENTITY(1,1) PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    email VARCHAR(100),
+    full_name VARCHAR(100),
+);
+
+
+CREATE TABLE Events (
+    event_id INT IDENTITY(1,1) PRIMARY KEY,
+    event_name VARCHAR(255),
+    event_description TEXT,
+    start_date DATE,
+    end_date DATE,
+    location VARCHAR(255),
+    organizer_id INT
+);

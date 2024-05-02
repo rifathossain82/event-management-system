@@ -1,0 +1,171 @@
+INSERT INTO Users (username, password, email, full_name)
+VALUES 
+    ('user1', 'password1', 'user1@example.com', 'John Doe'),
+    ('user2', 'password2', 'user2@example.com', 'Alice Smith'),
+    ('user3', 'password3', 'user3@example.com', 'Bob Johnson'),
+    ('user4', 'password4', 'user4@example.com', 'Emily Clark'),
+    ('user5', 'password5', 'user5@example.com', 'Michael Lee'),
+    ('user6', 'password6', 'user6@example.com', 'Sarah Brown'),
+    ('user7', 'password7', 'user7@example.com', 'David Wilson'),
+    ('user8', 'password8', 'user8@example.com', 'Olivia Martinez'),
+    ('user9', 'password9', 'user9@example.com', 'James Taylor'),
+    ('user10', 'password10', 'user10@example.com', 'Emma Anderson'),
+    ('user11', 'password11', 'user11@example.com', 'Liam Thomas'),
+    ('user12', 'password12', 'user12@example.com', 'Sophia White'),
+    ('user13', 'password13', 'user13@example.com', 'Noah Harris'),
+    ('user14', 'password14', 'user14@example.com', 'Isabella Martin'),
+    ('user15', 'password15', 'user15@example.com', 'Ethan Garcia'),
+    ('user16', 'password16', 'user16@example.com', 'Ava Lopez'),
+    ('user17', 'password17', 'user17@example.com', 'Mason Perez'),
+    ('user18', 'password18', 'user18@example.com', 'Harper Gonzalez'),
+    ('user19', 'password19', 'user19@example.com', 'Alexander Rodriguez'),
+    ('user20', 'password20', 'user20@example.com', 'Mia Hernandez'),
+    ('user21', 'password21', 'user21@example.com', 'Elijah Smith'),
+    ('user22', 'password22', 'user22@example.com', 'Charlotte Turner'),
+    ('user23', 'password23', 'user23@example.com', 'Daniel Brown'),
+    ('user24', 'password24', 'user24@example.com', 'Lily Murphy'),
+    ('user25', 'password25', 'user25@example.com', 'Matthew Scott');
+
+
+INSERT INTO Organizers (user_id)
+VALUES
+    (3),
+    (5),
+    (12),
+    (19),
+    (22),
+    (25);
+
+
+INSERT INTO Events (event_name, event_description, start_date, end_date, location, organizer_id)
+VALUES 
+    ('Tech Conference 2024', 'Annual tech conference showcasing latest innovations', '2024-10-20', '2024-10-22', 'San Francisco, USA', 3),
+    ('Marketing Seminar', 'Marketing strategies for the digital age', '2024-09-15', '2024-09-15', 'New York, USA', 5),
+    ('Leadership Workshop', 'Developing leadership skills for professionals', '2024-11-05', '2024-11-05', 'London, UK', 12),
+    ('Startup Pitch Event', 'Opportunity for startups to pitch their ideas to investors', '2024-12-01', '2024-12-01', 'San Francisco, USA', 19),
+    ('Health and Wellness Expo', 'Promoting health and wellness in the community', '2024-09-30', '2024-10-02', 'Chicago, USA', 22),
+    ('Art Exhibition', 'Showcasing contemporary art by local artists', '2024-11-10', '2024-11-12', 'Paris, France', 25),
+    ('Business Conference', 'Networking and learning opportunities for professionals', '2024-10-08', '2024-10-10', 'Tokyo, Japan', 3),
+    ('Fashion Show', 'Featuring latest trends in fashion industry', '2024-11-20', '2024-11-20', 'Milan, Italy', 5),
+    ('Music Festival', 'Celebrating music with live performances by renowned artists', '2024-12-15', '2024-12-17', 'Los Angeles, USA', 12),
+    ('Educational Symposium', 'Sharing knowledge and insights in various fields of study', '2024-09-25', '2024-09-26', 'Berlin, Germany', 19),
+    ('Food Expo', 'Showcasing culinary delights from around the world', '2024-10-30', '2024-11-01', 'Singapore', 22),
+    ('Film Festival', 'Screening independent films and documentaries', '2024-11-25', '2024-11-27', 'Toronto, Canada', 25);
+
+
+INSERT INTO Attendees (event_id, user_id)
+VALUES
+    (1, 1),
+    (1, 2),
+    (1, 3),
+    (1, 4),
+    (1, 5),
+    (2, 6),
+    (2, 7),
+    (2, 8),
+    (2, 9),
+    (2, 10),
+    (3, 11),
+    (3, 12),
+    (3, 13),
+    (3, 14),
+    (3, 15),
+    (4, 16),
+    (4, 17),
+    (4, 18),
+    (4, 19),
+    (4, 20),
+    (5, 21),
+    (5, 22),
+    (5, 23),
+    (5, 24),
+    (5, 25);
+
+
+INSERT INTO Sessions (event_id, session_name, start_time, end_time, location, speaker_id)
+VALUES
+    (1, 'Keynote Address', '09:00:00', '10:00:00', 'Main Hall A', 4),
+    (1, 'Panel Discussion', '10:30:00', '12:00:00', 'Conference Rm', 5),
+    (1, 'Workshop Session', '14:00:00', '16:00:00', 'Workshop Hall', 6),
+    (2, 'Marketing Trends', '11:00:00', '12:00:00', 'Marketing Room', 7),
+    (2, 'Networking Break', '12:30:00', '13:00:00', 'Lobby Area', 8),
+    (3, 'Leadership Workshop', '10:00:00', '12:00:00', 'Leadership Hall', 9),
+    (3, 'Roundtable Discussion', '13:30:00', '15:30:00', 'Discussion Room', 10),
+    (4, 'Product Launch', '09:30:00', '11:00:00', 'Launch Hall', 11),
+    (4, 'Q&A Session', '11:30:00', '12:30:00', 'Question Room', 12),
+    (5, 'Tech Talk', '10:00:00', '11:30:00', 'Tech Arena', 13),
+    (5, 'Code Workshop', '13:00:00', '15:00:00', 'Coding Lab', 14),
+    (6, 'Digital Marketing Seminar', '09:00:00', '10:30:00', 'Marketing Arena', 15),
+    (6, 'Social Media Panel', '11:00:00', '12:30:00', 'Social Hall', 16),
+    (7, 'Healthcare Innovations', '10:30:00', '12:00:00', 'Health Room', 17),
+    (7, 'Medical Breakthroughs', '13:30:00', '15:00:00', 'Breakthrough Hall', 18),
+    (8, 'Finance Keynote', '09:00:00', '10:00:00', 'Finance Arena', 19),
+    (8, 'Investment Workshop', '10:30:00', '12:00:00', 'Investment Hall', 20),
+    (9, 'Artificial Intelligence Talk', '11:00:00', '12:00:00', 'AI Room', 21),
+    (9, 'Robotics Demo', '13:00:00', '14:30:00', 'Robotics Lab', 22),
+    (10, 'Entrepreneurship Panel', '10:00:00', '11:30:00', 'Startup Room', 23),
+    (10, 'Pitch Competition', '13:00:00', '15:00:00', 'Pitch Arena', 24),
+    (11, 'Environmental Sustainability', '09:30:00', '11:00:00', 'Eco Hall', 25),
+    (11, 'Climate Change Workshop', '11:30:00', '13:00:00', 'Climate Room', 26),
+    (12, 'Art Exhibition', '10:00:00', '12:00:00', 'Art Gallery', 27),
+    (12, 'Artist Meet and Greet', '13:30:00', '15:30:00', 'Meetup Area', 28);
+
+
+INSERT INTO Speakers (user_id, bio, contact_information)
+VALUES
+    (1, 'Experienced speaker in the tech field.', 'speaker1@example.com'),
+    (2, 'Marketing expert with 10+ years of experience.', 'speaker2@example.com'),
+    (3, 'Author of a bestselling book on leadership.', 'speaker3@example.com'),
+    (4, 'Entrepreneur and startup mentor.', 'speaker4@example.com'),
+    (5, 'Expert in finance and investment strategies.', 'speaker5@example.com'),
+    (6, 'Renowned artist and creative director.', 'speaker6@example.com'),
+    (7, 'Expert in environmental sustainability.', 'speaker7@example.com'),
+    (8, 'Innovator in artificial intelligence technology.', 'speaker8@example.com'),
+    (9, 'Expert in cybersecurity and data privacy.', 'speaker9@example.com'),
+    (10, 'Specialist in digital marketing and social media.', 'speaker10@example.com'),
+    (11, 'Leader in the field of renewable energy.', 'speaker11@example.com'),
+    (12, 'Award-winning chef and culinary educator.', 'speaker12@example.com'),
+    (13, 'Renowned architect and urban planner.', 'speaker13@example.com'),
+    (14, 'Expert in health and wellness coaching.', 'speaker14@example.com'),
+    (15, 'Pioneer in space exploration and astronomy.', 'speaker15@example.com'),
+    (16, 'Influential thought leader in philosophy.', 'speaker16@example.com'),
+    (17, 'Expert in cross-cultural communication.', 'speaker17@example.com'),
+    (18, 'Renowned journalist and investigative reporter.', 'speaker18@example.com'),
+    (19, 'Expert in supply chain management and logistics.', 'speaker19@example.com'),
+    (20, 'Innovative designer and fashion entrepreneur.', 'speaker20@example.com'),
+    (21, 'Specialist in mental health advocacy and counseling.', 'speaker21@example.com'),
+    (22, 'Leader in sustainable agriculture and farming practices.', 'speaker22@example.com'),
+    (23, 'Renowned historian and author of numerous books.', 'speaker23@example.com'),
+    (24, 'Expert in leadership development and organizational psychology.', 'speaker24@example.com'),
+    (25, 'Influential figure in sports management and athlete representation.', 'speaker25@example.com');
+
+
+INSERT INTO Registrations (event_id, attendee_id, registration_date, registration_status)
+VALUES
+    (1, 1, '2024-05-01', 'Confirmed'),
+    (1, 2, '2024-05-02', 'Confirmed'),
+    (1, 3, '2024-05-03', 'Confirmed'),
+    (2, 4, '2024-05-04', 'Confirmed'),
+    (2, 5, '2024-05-05', 'Confirmed'),
+    (2, 6, '2024-05-06', 'Pending'),
+    (3, 7, '2024-05-07', 'Confirmed'),
+    (3, 8, '2024-05-08', 'Pending'),
+    (4, 9, '2024-05-09', 'Confirmed'),
+    (4, 10, '2024-05-10', 'Confirmed'),
+    (5, 11, '2024-05-11', 'Pending'),
+    (5, 12, '2024-05-12', 'Confirmed'),
+    (6, 13, '2024-05-13', 'Confirmed'),
+    (6, 14, '2024-05-14', 'Confirmed'),
+    (7, 15, '2024-05-15', 'Pending'),
+    (7, 16, '2024-05-16', 'Confirmed'),
+    (8, 17, '2024-05-17', 'Confirmed'),
+    (8, 18, '2024-05-18', 'Confirmed'),
+    (9, 19, '2024-05-19', 'Confirmed'),
+    (9, 20, '2024-05-20', 'Pending'),
+    (10, 21, '2024-05-21', 'Confirmed'),
+    (10, 22, '2024-05-22', 'Confirmed'),
+    (11, 23, '2024-05-23', 'Confirmed'),
+    (11, 24, '2024-05-24', 'Pending'),
+    (12, 25, '2024-05-25', 'Confirmed');
+
+
